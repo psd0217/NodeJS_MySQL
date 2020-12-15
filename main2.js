@@ -60,6 +60,10 @@ var app = http.createServer(function(request,response){
     {
       author.update_process(request,response);
     }
+    else if(pathName === '/author/delete_process')
+    {
+      author.delete_process(request,response);
+    }
     else
     {
         response.writeHead(404);
