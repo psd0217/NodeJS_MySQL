@@ -56,6 +56,10 @@ var app = http.createServer(function(request,response){
     {
       author.update(request,response);
     }
+    else if(pathName === '/author/update_process')
+    {
+      author.update_process(request,response);
+    }
     else
     {
         response.writeHead(404);
