@@ -3,7 +3,7 @@ var url =  require('url');
 var qs = require('querystring');
 var template = require('./lib/template.js');
 var db = require('./lib/db.js');
-
+var topic = require('./lib/topic.js');
 
 
 var app = http.createServer(function(request,response){
@@ -15,16 +15,7 @@ var app = http.createServer(function(request,response){
     {
       if(queryData.id === undefined)
       {
-        db.query(`SELECT * FROM topic`, function(error,topics){
-          var title = 'Welcome2';
-          var description = 'Hello, Node.js';
-          var list = template.list(topics);
-          var html = template.html(title, list,
-              `<h2>${title}</h2>${description}`,
-              `<a href="/create">create</a>`);
-          response.writeHead(200);
-          response.end(html);
-        });
+        topic.home(request,response);
       }
       else
       {
