@@ -1,0 +1,19 @@
+node ./main.js // 노드js 실행
+
+//sanitize-html 설치
+npm install -S sanitize-html
+//-S 옵션은 sanitize-html을 내 프로젝트에서만 사용하도록 설치
+
+
+//pm2 사용
+pm2 start ./main.js
+//pm2 작동중인 서버
+pm2 list
+//서버 정지
+pm2 stop ./main.js
+//서버 재시작
+pm2 restart ./main.js
+//서버 삭제
+pm2 delete ./main.js
+//서버 로그보기
+pm2 logs
