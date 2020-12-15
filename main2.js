@@ -48,6 +48,14 @@ var app = http.createServer(function(request,response){
     {
       author.home(request,response);
     }
+    else if(pathName === '/author/create_process')
+    {
+      author.create_process(request,response);
+    }
+    else if(pathName === '/author/update')
+    {
+      author.update(request,response);
+    }
     else
     {
         response.writeHead(404);
